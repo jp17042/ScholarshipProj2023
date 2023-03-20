@@ -10,7 +10,9 @@ This software will be divided into three major components that will cohere to cr
 
 Database:
 The database portion of this project will contain surveys that businesses frequently use as well as a history function. This will enable businesses to meet the criteria for flexibility and usability, since they won't have to create the same or similar surveys more than once, and the history feature will provide them some assurance if they fail to save a survey to the database by accident.
+
 Login system:
 Users will be able to log into the programme via the login system portion of this project, and their saved surveys will be restricted to that login alone. Security measures in the login system will make it difficult for other users to access a user's login.
+
 Searching system:
 Users who have access to a certain login, will be able to search surveys that were saved to the database. This satisfies the software's efficiency requirements and makes it simpler to search the database.
