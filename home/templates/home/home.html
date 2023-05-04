@@ -1,0 +1,30 @@
+{% load bootstrap_icons %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+          <a href="#"><img src="logo.png" alt="Logo"></a>
+        </div>
+        <div class="links">
+          <a href="#">Home</a>
+          <a href="#">Contact</a>
+          <a href="#">About Us</a>
+        </div>
+        <div class="login-signup">
+          <a href="#">Login</a>
+          <a href="/signup">Sign up</a>
+        </div>
+      </nav>
+      <h1 class="text">The most efficent software to survey your customers</h1>
+      <button type="button" class="trynow"><a href="/signup">CLICK HERE TO TRY NOW</a></button>
+      <!--<span class="chevron-down"></span>-->
+</body>
+</html>

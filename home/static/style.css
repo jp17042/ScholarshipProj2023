@@ -1,0 +1,77 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+  height: 50px;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.links a {
+  margin: 0 30px;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 14px 16px;
+}
+.links a:hover{
+  background-color: #189acd;
+  color:#fff;
+  border-radius: 5px;
+
+}
+
+.login-signup a {
+  margin: 0 10px;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.login-signup a:last-child {
+  background-color: #f1d413;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 5px;
+
+
+
+}
+.text{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: center;
+  transform: translateY(150px);
+  
+}
+.trynow{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  transform: translate(605px,150px);
+  background-color: #189acd;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 12px 20px;
+  border: none;
+}
+.trynow:hover{
+  cursor: pointer;
+}
+.chevron-down::before{
+  content: '\25BC';
+  display:inline-block;
+  margin-right: 5px;
+  transform: translate(3.5px, 1px);
+  font-size: 13px;
+  
+}
+
