@@ -1,11 +1,10 @@
-{% load bootstrap_icons %}
 {% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style1.css' %}">
     <title>Document</title>
 </head>
 <body>
@@ -20,11 +19,20 @@
         </div>
         <div class="login-signup">
           <a href="#">Login</a>
-          <a href="/signup">Sign up</a>
+          <a href="#">Sign up</a>
         </div>
       </nav>
-      <h1 class="text">The most efficent software to survey your customers</h1>
-      <button type="button" class="trynow"><a href="/signup">CLICK HERE TO TRY NOW</a></button>
-      <!--<span class="chevron-down"></span>-->
+    <form class="signin_form" >
+        <h1 id="signin_header">Sign In</h1>
+        <div class="inputForm">
+            <input type="text" placeholder="Email Address" name="fEmail" style="width: 600px; height: 45px;">
+            <input type="text" placeholder="Password" name="fPassword" style="width: 600px; height: 45px;">
+        </div>
+        <button id="fButton" name="fButton" type="submit">Sign In</button>
+    </form> 
+    <div class="optionF">
+        
+
+    </div>
 </body>
 </html>
