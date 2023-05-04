@@ -31,6 +31,12 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+<<<<<<< Updated upstream
+=======
+    'signup.apps.SignupConfig',
+    'login.apps.LoginConfig',
+    'home.apps.HomeConfig',
+>>>>>>> Stashed changes
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
