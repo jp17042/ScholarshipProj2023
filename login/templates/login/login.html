@@ -1,0 +1,39 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'style1.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+          <a href="#"><img src="logo.png" alt="Logo"></a>
+        </div>
+        <div class="links">
+          <a href="#">Home</a>
+          <a href="#">Contact</a>
+          <a href="#">About Us</a>
+        </div>
+        <div class="login-signup">
+          <a href="#">Login</a>
+          <a href="#">Sign up</a>
+        </div>
+      </nav>
+    <form class="signin_form" method="post" >
+      {% csrf_token %}
+        <h1 id="signin_header">Sign In</h1>
+        <div class="inputForm">
+            <input type="text" placeholder="Email Address" name="username" style="width: 600px; height: 45px;">
+            <input type="text" placeholder="Password" name="password" style="width: 600px; height: 45px;">
+        </div>
+        <button id="fButton" name="fButton" type="submit">Sign In</button>
+    </form> 
+    <div class="optionF">
+        
+
+    </div>
+</body>
+</html>
