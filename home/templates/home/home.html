@@ -13,13 +13,24 @@
           <a href="#"><img src="logo.png" alt="Logo"></a>
         </div>
         <div class="links">
+          {% if user.is_authenticated%}
           <a href="#">Home</a>
           <a href="#">Contact</a>
           <a href="#">About Us</a>
+          <a>Survey</a>
+          {% else %}
+          <a href="#">Home</a>
+          <a href="#">Contact</a>
+          <a href="#">About Us</a>
+          {% endif %}
         </div>
         <div class="login-signup">
+        {% if user.is_authenticated%}
+          <a href="/logout">Logout</a>
+        {% else %}
           <a href="/login">Login</a>
           <a href="/signup">Sign up</a>
+        {% endif %}
         </div>
       </nav>
       <h1 class="text">The most efficent software to survey your customers</h1>
