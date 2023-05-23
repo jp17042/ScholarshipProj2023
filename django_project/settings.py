@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'survey.apps.SurveyConfig',
     'signup.apps.SignupConfig',
     'login.apps.LoginConfig',
     'home.apps.HomeConfig',
@@ -77,10 +78,14 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
+   #'default':{
+
+    #},
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'database.sqlite3',
-    }
+    },
+   
 }
 
 
