@@ -52,6 +52,9 @@ nav {
   
   }
 
+#signin_header{
+  transform: translate(20px, 20px)
+}
 .signin_form{
     margin-top: 4%;
     background-color:aliceblue;
@@ -59,21 +62,24 @@ nav {
     margin-right: 10%;
     height: 80%;
 }
-input{
+.inputForm input{
     margin-bottom: 15px;
+    display: block;
 }
 .inputForm{
-    transform: translate(0px, 30px);
+    transform: translate(20px, 30px);
+    
 }
+
 #fButton{
-    transform: translate(0px, 30px);
+    transform: translate(20px, 30px);
     width: 600px;
     height: 40px;
 }
 .optionF{
-    width: 513px;
-    height: 300px;
+    width: 613px;
+    height: 400px;
     background-color: #333;
-    transform: translate(770px, -471px);
+    transform: translate(900px, -720px);
     
 }
