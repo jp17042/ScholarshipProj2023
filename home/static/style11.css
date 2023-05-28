@@ -56,7 +56,10 @@ nav {
 }
 .trynow{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  transform: translate(605px,150px);
+  transform: translate(0, 150px);
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
   background-color: #189acd;
   font-weight: bold;
   border-radius: 5px;

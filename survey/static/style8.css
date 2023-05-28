@@ -39,3 +39,49 @@ input{
 
 
 }
+#plus_box{
+  background-color: #189acd;
+  transform: translate(1155px, -50px)
+}
+.plus_1{
+background-color: black;
+transform: translate(10px, 23px)
+}
+.plus_2{
+  background-color: black;
+  transform: translate(10px, 20px) rotate(90deg);
+ 
+  
+}
+#add_section{
+  background-color: white;
+  transform: translate(555px, -116.5px);
+  display: flex;
+  flex-direction: column;
+  border: solid;
+  border-color: darkgray;
+  border-width: 1px;
+
+
+}
+.container{
+  margin-left: 10px;
+  margin-top: 6px;
+  display: flex;
+  align-items: flex-start;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+.container label{
+  margin-top: 5px;
+  margin-right: 10px;
+  white-space: nowrap;
+  align-self: flex-start;
+
+}
+.container input[type="text"],
+.container select{
+  width: 200px;
+  margin: 5px
+}
+

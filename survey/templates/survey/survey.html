@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'style8.css' %}">
+    <script src="{% static 'script.js' %}"></script>
     <title>Document</title>
 </head>
 <body>
@@ -38,6 +39,39 @@
       <div class="search">
         <input type="text" placeholder="Type in Keywords to search for Survey" name="search_s" style="width: 600px; height: 50px;">
       </div>
+      <div id="plus_box" style="width: 50px; height: 50px;">
+        <div class="plus_1" style="width: 30px; height: 3px;">
+
+        </div>
+        <div class="plus_2" style="width: 30px; height: 3px;">
+          
+        </div>
+
+      </div>
+      
+
+
+
+
+ 
     </form>
+    <div id="add_section" style="width: 600px; height: 500px; display: none;">
+      <div class="container">
+        <label for="S_name">Survey Name:</label>
+        <input id="S_name" name="S_name" type="text">
+      </div>
+      <div class="container">
+        <label for="Q_options">Question Type:</label>
+        <select id="Q_options" name="Q_options">
+          <option value="scale">1-10 Scale</option>
+          <option value="own">Own Answer</option>
+          <option value="yes_no_maybe">Yes/No/Mabye</option>
+        </select>
+      </div>
+      <div class="container">
+        <label class="S_q" for="S_question">Question:</label>
+        <input id="S_question" name="S_question" type="text">
+      </div>
+    </div>
 </body>
 </html>
