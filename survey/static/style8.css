@@ -57,10 +57,13 @@ transform: translate(10px, 23px)
   background-color: white;
   transform: translate(555px, -116.5px);
   display: flex;
+  position: fixed;
   flex-direction: column;
   border: solid;
   border-color: darkgray;
   border-width: 1px;
+  overflow-y: auto;
+  justify-content: center;
 
 
 }
