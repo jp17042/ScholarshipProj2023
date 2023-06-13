@@ -1,0 +1,146 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo img {
+    height: 50px;
+  }
+  
+  .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .links a {
+    margin: 0 30px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 14px 16px;
+  }
+  .links a:hover{
+    background-color: #189acd;
+    color:#fff;
+    border-radius: 5px;
+  
+  }
+
+#add_section{
+  background-color: white;
+  transform: translate(555px, -116.5px);
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  border: solid;
+  border-color: darkgray;
+  border-width: 1px;
+  overflow-y: auto;
+  justify-content: center;
+
+
+}
+.container{
+  margin-left: 10px;
+  margin-top: 6px;
+  display: flex;
+  align-items: flex-start;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+.container label{
+  margin-top: 5px;
+  margin-right: 10px;
+  white-space: nowrap;
+  align-self: flex-start;
+
+}
+.container input[type="text"],
+.container select{
+  width: 200px;
+  margin: 5px
+}
+input[name="search_s"]{
+  width: 100%;
+  height: 50px;
+  background-color: white;
+
+  padding: 0 10px;
+  color: #333;
+  font-weight: bold;
+  margin-top: 22px;
+  
+}
+
+.search_wrap{
+  width: 650px; 
+  height: 50px; 
+  background-color: black; 
+  display: flex;
+  align-items: center;
+
+
+}
+#plus_box{
+  width: 50px;
+  height: 50px;
+  background-color: #189acd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plus_2 {
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  transform:translateX(-11px) rotate(90deg) 
+}
+.plus_1{
+  transform: translate(14px, 0);
+  width: 30px;
+  height: 3px;
+  background-color: black;
+}
+form{
+  flex-grow: 1;
+}
+
+#search_survey{
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -35%);
+}
+
+#button_add{
+  float: right;
+  transform: translate(-23px, 13px);
+  background-color: #189acd;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  width: 100px;
+  height: 25px;
+}
+
+#submit_add{
+  float: right;
+  transform: translate(-23px, 7px);
+  background-color: #189acd;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  width: 100px;
+  height: 25px;
+}
+
+.user_id_acc{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}

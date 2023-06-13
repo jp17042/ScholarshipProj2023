@@ -13,7 +13,7 @@ def create_user_table(user_id):
     cursor = conn.cursor()
 
     # Execute the raw SQL query to create the table
-    create_table_query = 'CREATE TABLE {0} (Survey_Name TEXT, Survey_Type TEXT, Survey_Question TEXT)'.format(table_name)
+    create_table_query = 'CREATE TABLE {0} (Question_Number TEXT, Survey_Name TEXT, Question_Type TEXT, Question_Text TEXT)'.format(table_name)
     cursor.execute(create_table_query)
 
     # Commit the changes and close the connection
