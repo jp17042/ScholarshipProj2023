@@ -35,11 +35,12 @@ nav {
   background-color: white;
   transform: translate(555px, -116.5px);
   display: flex;
-  position: fixed;
+  position: relative;
   flex-direction: column;
   border: solid;
   border-color: darkgray;
   border-width: 1px;
+  margin-top: 20px;
   overflow-y: auto;
   justify-content: center;
 
@@ -50,8 +51,10 @@ nav {
   margin-top: 6px;
   display: flex;
   align-items: flex-start;
-  align-items: baseline;
   margin-bottom: 10px;
+
+  height: 500px;
+
 }
 .container label{
   margin-top: 5px;
@@ -60,16 +63,16 @@ nav {
   align-self: flex-start;
 
 }
-.container input[type="text"],
-.container select{
-  width: 200px;
-  margin: 5px
+#search_survey .search input[type="text"]
+{
+  width: 600px;
+  height: 50px;
 }
 input[name="search_s"]{
   width: 100%;
   height: 50px;
   background-color: white;
-
+  
   padding: 0 10px;
   color: #333;
   font-weight: bold;
@@ -82,7 +85,9 @@ input[name="search_s"]{
   height: 50px; 
   background-color: black; 
   display: flex;
+
   align-items: center;
+  justify-content: center;
 
 
 }
@@ -107,17 +112,24 @@ input[name="search_s"]{
   height: 3px;
   background-color: black;
 }
-form{
-  flex-grow: 1;
-}
+
 
 #search_survey{
   position: absolute;
+  display: flex;
+  flex-direction:column ;
+  justify-content: center;
+  align-items: center;
+
   top: 35%;
   left: 50%;
   transform: translate(-50%, -35%);
+
 }
 
+.search{
+  height: 95px;
+}
 #button_add{
   float: right;
   transform: translate(-23px, 13px);
@@ -140,7 +152,3 @@ form{
   height: 25px;
 }
 
-.user_id_acc{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-}

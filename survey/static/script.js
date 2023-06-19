@@ -91,7 +91,6 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
       function search() {
-          console.log("hi there it works")
           // Clear previous results
           document.getElementById("results").innerHTML = "";
         

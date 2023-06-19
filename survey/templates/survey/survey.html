@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'style16.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style17.css' %}">
     <script src="{% static 'script.js' %}"></script>
     <title>Document</title>
 </head>
@@ -35,13 +35,15 @@
         {% endif %}
         </div>
     </nav>
-      <form id="search_survey">
+      <div id="search_survey">
         <div class="search_wrap">
           <div class="search">
               <input type="text" placeholder="Type in Keywords to search for Survey" id="searchInput" name="search_s" style="width: 600px; height: 50px;">
               <button onclick="search()">Search</button>
+              
               <div id="results"></div>
           </div>
+          
           <div id="plus_box">
             <div class="plus_1">
 
@@ -52,7 +54,7 @@
         
           </div>
         </div>
-      </form>
+      </div>
     <form method="post">
     {% csrf_token %}
       <div id="add_section" style="width: 600px; height: 500px; display: none;">
