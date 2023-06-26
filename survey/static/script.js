@@ -85,53 +85,6 @@ document.addEventListener('DOMContentLoaded', function(){
         });
 
         
-        
 
         
 });
-
-      function search() {
-          // Clear previous results
-          document.getElementById("results").innerHTML = "";
-        
-          // Get the keyword entered by the user
-          var keyword = document.getElementById("searchInput").value;
-        
-          // Create a new XMLHttpRequest object
-          var xhr = new XMLHttpRequest();
-        
-          // Define the request URL
-          var url = "/survey?keyword=" + encodeURIComponent(keyword);
-        
-          // Open a GET request to the server
-          xhr.open("GET", url, true);
-        
-          // Define the callback function when the request completes
-          xhr.onreadystatechange = function() {
-            console.log(xhr.responseText);
-            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-              // Parse the response as JSON
-              var results = JSON.parse(xhr.responseText);
-              
-              // Display the results
-              displayResults(results);
-            }
-          };
-        
-          // Send the request
-          xhr.send();
-        }
-        
-        function displayResults(results) {
-          var container = document.getElementById("results");
-        
-          // Iterate over the results and create HTML elements to display them
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-        
-            var resultElement = document.createElement("div");
-            resultElement.textContent = item.title;
-        
-            container.appendChild(resultElement);
-          }
-        }

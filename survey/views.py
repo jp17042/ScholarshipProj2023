@@ -4,11 +4,51 @@ from django.http import JsonResponse
 from signup.views import signup, User
 from django.contrib import auth
 from django.views.decorators.csrf import csrf_exempt
+
 import sqlite3
+
+
+def search_view(request, user_id):
+    keyword = request.GET.get('keyword', '')
+    
+    # Connect to the SQLite database
+    conn = sqlite3.connect('database.sqlite3')
+    cursor = conn.cursor()
+     
+    cursor.execute('INSERT INTO user_{}_data (Survey_Name, Survey_Type, Survey_Question) VALUES (?, ?, ?)'.format(user_id), (q_N, q_T, q_q))
+    conn.commit()
+
+    # Execute the query
+    cursor.execute("SELECT Survey_Name FROM user_{}_data WHERE Survey_Name LIKE ?".format(user_id), ('%' + keyword + '%',))
+
+    # Fetch all the rows
+    rows = cursor.fetchall()
+
+    # Close the database connection
+    conn.close()
+
+    # Prepare the results as a list of dictionaries
+    results = []
+    for row in rows:
+        result = {'title': row[0]}  # Adjust the column index based on your database structure
+        results.append(result)
+
+    return JsonResponse(results, safe=False)
 # Create your views here.
 def surveys(request):
     global user_id
     user_id = request.user.id
+    conn = sqlite3.connect('/Users/jacobptak/Documents/GitHub/ScholarshipProj2023/database.sqlite3')
+    cursor = conn.cursor()
+    print(user_id)
+    cursor.execute("SELECT * FROM user_{}_data".format(user_id))
+
+    rows = cursor.fetchall()
+
+
+    print(rows)
+    
+    conn.close()
     if request.method == 'POST':
         form = SurveyForm(request.POST)
         if form.is_valid():
@@ -29,34 +69,9 @@ def surveys(request):
     keyword = request.GET.get('keyword')
     if keyword:
         return search_view(request)
-
-    return render(request, 'survey/survey.html')
+    return render(request, 'survey/survey.html', {'rows': rows})
 
 @csrf_exempt
-def search_view(request):
-    keyword = request.GET.get('keyword', '')
-    
-    # Connect to the SQLite database
-    conn = sqlite3.connect('database.sqlite3')
-    cursor = conn.cursor()
-
-    # Execute the query
-    cursor.execute("SELECT Survey_Name FROM user_{}_data WHERE Survey_Name LIKE ?".format(user_id), ('%' + keyword + '%',))
-
-    # Fetch all the rows
-    rows = cursor.fetchall()
-
-    # Close the database connection
-    conn.close()
-
-    # Prepare the results as a list of dictionaries
-    results = []
-    for row in rows:
-        result = {'title': row[0]}  # Adjust the column index based on your database structure
-        results.append(result)
-
-    return JsonResponse(results, safe=False)
-
 def get_question_data(post_data):
     question_data = []
     print(post_data)

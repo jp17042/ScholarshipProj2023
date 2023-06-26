@@ -151,4 +151,17 @@ input[name="search_s"]{
   width: 100px;
   height: 25px;
 }
+#results{
 
+  background-color: lightgray;
+}
+#results div{
+  border-color: black;
+  border-style:solid;
+  color: #189acd;
+}
+button{
+  height: 50px;
+  transform: translate(-60px, -50px);
+
+}
