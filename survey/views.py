@@ -41,7 +41,7 @@ def surveys(request):
     conn = sqlite3.connect('/Users/jacobptak/Documents/GitHub/ScholarshipProj2023/database.sqlite3')
     cursor = conn.cursor()
     print(user_id)
-    cursor.execute("SELECT * FROM user_{}_data".format(user_id))
+    cursor.execute("SELECT * FROM user_{}_data WHERE Question_Number LIKE '1_question'".format(user_id))
 
     rows = cursor.fetchall()
 

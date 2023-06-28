@@ -165,3 +165,13 @@ button{
   transform: translate(-60px, -50px);
 
 }
+thead{
+
+  background-color: #189acd;
+}
+#tableDiv{
+  transform: translate(0, 120px);
+}
+thead tr th{
+  float: left;
+}
