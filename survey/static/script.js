@@ -1,17 +1,11 @@
 
 document.addEventListener('DOMContentLoaded', function(){
-  const search = document.getElementById('plus_box');
+  const search = document.getElementById('addButton');
   const add = document.getElementById('add_section');
   var input = document.querySelector("input[name='search_s']");
       search.addEventListener('click', function(){
         if (add.style.display === 'none'){
-          const inputRect = input.getBoundingClientRect();
-          const offset = 557; // Adjust this offset value as needed
-          const top = inputRect.top + input.offsetHeight + window.scrollY + 66;
-          const left = inputRect.left - add.offsetWidth - offset;
-
-          add.style.top = top + "px";
-          add.style.left = left + "px";
+        
           add.style.display = 'block';
       } else {
           add.style.display = 'none';
@@ -23,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function(){
         const questionsSection = document.getElementById('questions_section');
         let questionCounter = 0;
         add_button.addEventListener('click', function(event){
+            console.log("Hi this workedc")
             event.preventDefault();
             questionCounter++;
             const newDiv = document.createElement('div');

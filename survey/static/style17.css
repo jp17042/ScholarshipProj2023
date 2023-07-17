@@ -53,7 +53,7 @@ nav {
   align-items: flex-start;
   margin-bottom: 10px;
 
-  height: 500px;
+
 
 }
 .container label{
@@ -174,4 +174,7 @@ thead{
 }
 thead tr th{
   float: left;
+}
+#addButton{
+  transform: translate(10px, 20px);
 }
