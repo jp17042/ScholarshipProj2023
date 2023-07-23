@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'style17.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style18.css' %}">
     <script src="{% static 'script.js' %}"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
@@ -58,7 +58,7 @@
           </tbody>
       </table>
     </div>        
-      
+    
     <form method="post">
     {% csrf_token %}
       <div id="add_section" style="width: 600px; height: 500px; display: none;">
@@ -74,7 +74,9 @@
       
         <button id="submit_add" type="submit">Submit</button>
       </div>
+
     </form>
+    <div id="overlay"></div>
 </body>
 <script>
   $(document).ready(function() {

@@ -7,7 +7,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 import sqlite3
 
-
+# View function to handle searching surveys for a specific user
 def search_view(request, user_id):
     keyword = request.GET.get('keyword', '')
     
@@ -15,13 +15,14 @@ def search_view(request, user_id):
     conn = sqlite3.connect('database.sqlite3')
     cursor = conn.cursor()
      
+    # Insert data into the user's data table
     cursor.execute('INSERT INTO user_{}_data (Survey_Name, Survey_Type, Survey_Question) VALUES (?, ?, ?)'.format(user_id), (q_N, q_T, q_q))
     conn.commit()
 
-    # Execute the query
+    # Execute the query to search for surveys by name
     cursor.execute("SELECT Survey_Name FROM user_{}_data WHERE Survey_Name LIKE ?".format(user_id), ('%' + keyword + '%',))
 
-    # Fetch all the rows
+    # Fetch all the rows containing the search results
     rows = cursor.fetchall()
 
     # Close the database connection
@@ -33,48 +34,49 @@ def search_view(request, user_id):
         result = {'title': row[0]}  # Adjust the column index based on your database structure
         results.append(result)
 
+    # Return the search results as a JSON response
     return JsonResponse(results, safe=False)
-# Create your views here.
+
+# View function to display surveys for the current user
 def surveys(request):
     global user_id
     user_id = request.user.id
+
+    # Connect to the SQLite database
     conn = sqlite3.connect('/Users/jacobptak/Documents/GitHub/ScholarshipProj2023/database.sqlite3')
     cursor = conn.cursor()
-    print(user_id)
-    cursor.execute("SELECT * FROM user_{}_data WHERE Question_Number LIKE '1_question'".format(user_id))
 
+    # Retrieve data for surveys with Question_Number '1_question'
+    cursor.execute("SELECT * FROM user_{}_data WHERE Question_Number LIKE '1_question'".format(user_id))
     rows = cursor.fetchall()
 
-
-    print(rows)
-    
+    # Close the database connection
     conn.close()
+
     if request.method == 'POST':
         form = SurveyForm(request.POST)
         if form.is_valid():
-            print(request.POST)
-            print('hi')
+            # Process the submitted form data
             survey_name = form.cleaned_data['S_name']
-    
             question_data = get_question_data(request.POST)
-
             save_question_data(user_id, question_data, survey_name)
-            print('Question Data:', question_data)
             return redirect('/survey')
         
     else:
         form = SurveyForm()
 
-    # Check if a search query was provided in the URL
+    # Check if a search query was provided in the URL and display the search results
     keyword = request.GET.get('keyword')
     if keyword:
         return search_view(request)
+
+    # Render the survey.html template with the survey data
     return render(request, 'survey/survey.html', {'rows': rows})
 
+# A decorator to exempt this view from CSRF protection
 @csrf_exempt
 def get_question_data(post_data):
     question_data = []
-    print(post_data)
     
     # Extract the question data from the POST data
     for key, value in post_data.items():
@@ -86,6 +88,7 @@ def get_question_data(post_data):
     
     return question_data
 
+# Function to save the question data for a survey in the user's data table
 def save_question_data(user_id, question_data, survey_name):
     conn = sqlite3.connect('/Users/jacobptak/Documents/GitHub/ScholarshipProj2023/database.sqlite3')  # Replace with the actual path to your SQLite database
     cursor = conn.cursor()

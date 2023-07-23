@@ -2,13 +2,16 @@
 document.addEventListener('DOMContentLoaded', function(){
   const search = document.getElementById('addButton');
   const add = document.getElementById('add_section');
+  const overlay = document.getElementById('overlay')
   var input = document.querySelector("input[name='search_s']");
       search.addEventListener('click', function(){
         if (add.style.display === 'none'){
-        
+  
+          overlay.style.display = 'block';
           add.style.display = 'block';
       } else {
           add.style.display = 'none';
+          overlay.style.display = 'none';
       }
       });
 
