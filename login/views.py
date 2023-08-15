@@ -1,21 +1,23 @@
-from django.contrib.auth import authenticate, login, logout
-from django.shortcuts import render, redirect
-
-def login_view(request):
-    #IF the request method is a POST method
-    if request.method == 'POST':
-        username = request.POST.get('username')
+from django.shortcuts import render
+from django.http import HttpResponse
+from .models import InfoPersonal
+# Create your views here.
+def login(request):
+    if request.method == "POST":
+        name = request.POST.get('name')
+        email = request.POST.get('email')
         password = request.POST.get('password')
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('/')  # Replace 'home' with the name of your home page URL pattern
-        else:
-            # Authentication failed, display an error message
+        print(name, email, password)
 
-            return render(request, 'login/login.html')
-    else:
-        return render(request, 'login/login.html')
+        new_info = InfoPersonal()
+        new_info.name = name
+        new_info.email = email
+        new_info.password = password
 
+
+        new_info.save()
+
+
+    return render(request, 'login/login.html')
 
 

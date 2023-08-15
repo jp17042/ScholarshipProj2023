@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'style10.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'style1.css' %}">
     <title>Document</title>
 </head>
 <body>
@@ -13,43 +13,26 @@
           <a href="#"><img src="logo.png" alt="Logo"></a>
         </div>
         <div class="links">
-          {% if user.is_authenticated%}
           <a href="#">Home</a>
           <a href="#">Contact</a>
           <a href="#">About Us</a>
-          <a href="/survey">Survey</a>
-
-          {% else %}
-          <a href="#">Home</a>
-          <a href="#">Contact</a>
-          <a href="#">About Us</a>
-          {% endif %}
         </div>
         <div class="login-signup">
-        {% if user.is_authenticated%}
-          <a href="/logout">Logout</a>
-        {% else %}
-          <a href="/login">Login</a>
-          <a href="/signup">Sign up</a>
-        {% endif %}
+          <a href="#">Login</a>
+          <a href="#">Sign up</a>
         </div>
       </nav>
-   
-    <form method="post" class="loginBody">
-        {% csrf_token %}
-        <h1 class="text">Signup Page</h1>
+    <form class="signin_form" >
+        <h1 id="signin_header">Sign In</h1>
         <div class="inputForm">
-            <h1 class="inputHead">Name</h1>
-            <input type="text" id="username" name="username" style="width: 500px; height: 40px;">
-            <h1 class="inputHead">Email</h1>
-            <input type="text" id="email" name="email" style="width: 500px; height: 40px;">
-            <h1 class="inputHead">Password</h1>
-            <input type="password" id="password" name="password" style="width: 500px; height: 40px;">
+            <input type="text" placeholder="Email Address" name="fEmail" style="width: 600px; height: 45px;">
+            <input type="text" placeholder="Password" name="fPassword" style="width: 600px; height: 45px;">
         </div>
-        <button class="loginButton" type="submit">Signup</button>
-        <div class="Auth_divider" style="width: 550px; height: 2px;">
+        <button id="fButton" name="fButton" type="submit">Sign In</button>
+    </form> 
+    <div class="optionF">
+        
 
-        </div>
-    </form>
+    </div>
 </body>
 </html>
