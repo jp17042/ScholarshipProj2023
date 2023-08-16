@@ -73,7 +73,7 @@ nav {
   
 }
 
-.loginBody{
+.signupBody{
   margin-top: 4%;
   margin-left: 30%;
   margin-right: 30%;
@@ -90,10 +90,10 @@ input{
   font-size: 20px;
   margin-left: 37px;
 }
-.loginButton{
+.signupButton{
   width: 300px;
   height: 30px;
-  transform: translate(calc(100% - 160px));
+  transform: translate(calc(100% - 120px));
   background-color: #f1d413;
   border-radius: 7px;
   border: none;

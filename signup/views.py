@@ -14,8 +14,7 @@ def signup(request):
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
             email = form.cleaned_data['email']
-            last_name = form.cleaned_data['last_name']
-            user = User.objects.create_user(username=username, password=password, email=email, last_name=last_name)
+            user = User.objects.create_user(username=username, password=password, email=email)
             # Get the user's ID after signup
             user_id = user.pk
 

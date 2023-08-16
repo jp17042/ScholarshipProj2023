@@ -35,7 +35,7 @@
         </div>
       </nav>
    
-    <form method="post" class="loginBody">
+    <form method="post" class="signupBody">
         {% csrf_token %}
         <h1 class="text">Signup Page</h1>
         <div class="inputForm">
@@ -45,14 +45,8 @@
             <input type="text" id="email" name="email" style="width: 500px; height: 40px;">
             <h1 class="inputHead">Password</h1>
             <input type="password" id="password" name="password" style="width: 500px; height: 40px;">
-            <h1 class="inputHead">Signup type</h1>
-            <select id="last_name" name="last_name">
-
-              <option>Company</option>
-              <option>User</option>
-            </select>
         </div>
-        <button class="loginButton" type="submit">Signup</button>
+        <button class="signupButton" type="submit">Signup</button>
     </form>
 </body>
 </html>
