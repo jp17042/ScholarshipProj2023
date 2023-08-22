@@ -31,7 +31,7 @@ nav {
 
 }
 
-.login-signup a {
+#logoutStyle{
   margin: 0 10px;
   color: #333;
   text-decoration: none;
@@ -74,4 +74,33 @@ nav {
   font-size: 13px;
   
 }
+.icon-container{
+  position: relative;
+  display: inline-block;
 
+}
+#personIcon{
+  cursor: pointer;
+}
+
+.popup-links{
+  display: none;
+  position: absolute;
+  top: 25px;
+  left: -80px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+
+}
+.popup-links a {
+  color: black;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+}
+
+.popup-links a:hover {
+  background-color: #ddd;
+}

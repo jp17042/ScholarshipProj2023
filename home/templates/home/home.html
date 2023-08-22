@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'stylehome.css' %}">
     <title>Document</title>
 </head>
 <body>
@@ -13,7 +13,7 @@
           <a href="#"><img src="logo.png" alt="Logo"></a>
         </div>
         <div class="links">
-          {% if user.last_name == "Company"%}
+          {% if user.is_authenticated %}
           <a href="#">Home</a>
           <a href="#">Contact</a>
           <a href="#">About Us</a>
@@ -22,15 +22,39 @@
           <a href="#">Home</a>
           <a href="#">Contact</a>
           <a href="#">About Us</a>
+          <div class="login-signup">
+            <a href="/login">Login</a>
+            <a href="/signup">Sign up</a>
+          
+          </div>
           {% endif %}
         </div>
         <div class="login-signup">
-          <a href="/login">Login</a>
-          <a href="/signup">Sign up</a>
+        {% if user.is_authenticated %}
+          <a id="logoutStyle" href="/logout">Logout</a>
+        
+          <div class="icon-container">
+            <a id="personIcon">👤</a> <!-- I used a person emoji for simplicity, replace with your desired text or icon font -->
+            <div class="popup-links" id="popupLinks">
+                <a>Settings</a>
+                <a>Account</a>
+            </div>
+          </div>
         </div>
+        {% endif %}
       </nav>
       <h1 class="text">The most efficent software to survey your customers</h1>
       <button type="button" class="trynow"><a href="/signup">CLICK HERE TO TRY NOW</a></button>
       <!--<span class="chevron-down"></span>-->
 </body>
+<script>
+  document.getElementById('personIcon').addEventListener('click', function() {
+    const popupLinks = document.getElementById('popupLinks');
+    if (popupLinks.style.display === 'none' || popupLinks.style.display === '') {
+        popupLinks.style.display = 'block';
+    } else {
+        popupLinks.style.display = 'none';
+    }
+});
+</script>
 </html>
