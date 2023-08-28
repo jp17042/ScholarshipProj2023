@@ -33,6 +33,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'survey.apps.SurveyConfig',
     'signup.apps.SignupConfig',
+
+    'CSV.apps.CsvConfig',
     'login.apps.LoginConfig',
     'home.apps.HomeConfig',
     'django.contrib.admin',
@@ -58,7 +60,7 @@ ROOT_URLCONF = 'django_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-   
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

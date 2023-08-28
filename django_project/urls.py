@@ -23,4 +23,5 @@ urlpatterns = [
     path('login/', include('login.urls')),
     path('logout/', include('logout.urls')),
     path('survey/', include('survey.urls')),
+    path('csv_upload', include('CSV.urls')),
 ]
